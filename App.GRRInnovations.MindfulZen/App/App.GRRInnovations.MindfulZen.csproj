@@ -57,28 +57,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\icon_lembretes_notificacoes.png" />
-	  <None Remove="Resources\Images\icon_musica_relaxante.png" />
-	  <None Remove="Resources\Images\icon_programas_personalizados.png" />
-	  <None Remove="Resources\Images\icon_rastreamento_progresso.png" />
-	  <None Remove="Resources\Images\icon_sessoes_guiadas.png" />
-	  <None Remove="Resources\Images\icon_tecnicas_respiracao.png" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Models\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="Views\HomeView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

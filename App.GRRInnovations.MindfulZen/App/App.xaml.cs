@@ -1,6 +1,4 @@
-﻿using App.GRRInnovations.MindfulZen.Views;
-
-namespace App.GRRInnovations.MindfulZen
+﻿namespace App.GRRInnovations.MindfulZen
 {
     public partial class App : Application
     {
@@ -8,7 +6,7 @@ namespace App.GRRInnovations.MindfulZen
         {
             InitializeComponent();
 
-            MainPage = new HomeView();
+            MainPage = new AppShell();
         }
     }
 }
