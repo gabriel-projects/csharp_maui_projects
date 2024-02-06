@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.GRRInnovations.AgendaPro", "App.GRRInnovations.AgendaPro.csproj", "{9D47D4C6-D2BF-4A5C-A78E-12D685D661AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D47D4C6-D2BF-4A5C-A78E-12D685D661AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D47D4C6-D2BF-4A5C-A78E-12D685D661AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D47D4C6-D2BF-4A5C-A78E-12D685D661AC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9D47D4C6-D2BF-4A5C-A78E-12D685D661AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D47D4C6-D2BF-4A5C-A78E-12D685D661AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D47D4C6-D2BF-4A5C-A78E-12D685D661AC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F968214-8EE9-4139-84E7-9A6D30921DB4}
+	EndGlobalSection
+EndGlobal
