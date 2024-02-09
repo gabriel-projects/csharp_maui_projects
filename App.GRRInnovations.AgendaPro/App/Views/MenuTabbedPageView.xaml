@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="App.GRRInnovations.AgendaPro.Views.MenuTabbedPageView"
+            xmlns:local="clr-namespace:App.GRRInnovations.AgendaPro.Views"
+            Title="MenuTabbedPageView">
+
+    <local:ScheduleView Title="Horários" IconImageSource="scheduling.svg">
+    </local:ScheduleView>
+    <local:CalendarView Title="Calendario" IconImageSource="scheduling.svg">
+    </local:CalendarView>
+    <ContentPage Title="Support" IconImageSource="support.svg">
+        <Label Text="Dummy text for Support Page"></Label>
+    </ContentPage>
+</TabbedPage>

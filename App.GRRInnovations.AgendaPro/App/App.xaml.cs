@@ -1,4 +1,6 @@
-﻿namespace App.GRRInnovations.AgendaPro
+﻿using App.GRRInnovations.AgendaPro.Views;
+
+namespace App.GRRInnovations.AgendaPro
 {
     public partial class App : Application
     {
@@ -6,7 +8,9 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            
+
+            MainPage = new MenuTabbedPageView();
         }
     }
 }

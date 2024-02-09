@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using App.GRRInnovations.AgendaPro.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
+using System.Reflection;
 
 namespace App.GRRInnovations.AgendaPro
 {
@@ -7,6 +11,10 @@ namespace App.GRRInnovations.AgendaPro
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+
+            builder.ConfigureSyncfusionCore();
+            builder.ConfigureJsonSettings();
+
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
@@ -16,10 +24,26 @@ namespace App.GRRInnovations.AgendaPro
                 });
 
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
+        }
+
+        private static void ConfigureJsonSettings(this MauiAppBuilder builder)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var stream = assembly.GetManifestResourceStream("App.GRRInnovations.AgendaPro.appsettings.json");
+
+            var config = new ConfigurationBuilder()
+                        .AddJsonStream(stream)
+                        .Build();
+
+            builder.Configuration.AddConfiguration(config);
+
+            var settings = config.GetRequiredSection("Settings").Get<Setting>();
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(settings.SyncfusionLicenseRegisterKey);
         }
     }
 }
