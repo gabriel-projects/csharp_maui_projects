@@ -4,12 +4,12 @@
              x:Class="App.GRRInnovations.AgendaPro.Views.ScheduleView"
              xmlns:scheduler="clr-namespace:Syncfusion.Maui.Scheduler;assembly=Syncfusion.Maui.Scheduler"
              Title="ScheduleView" BackgroundColor="Beige">
-    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> 
+    <Grid Margin="0,0,0,10"> 
         <scheduler:SfScheduler View="Week">
             <scheduler:SfScheduler.DaysView>
                 <scheduler:SchedulerDaysView 
                         NumberOfVisibleDays="7"/>
             </scheduler:SfScheduler.DaysView>
         </scheduler:SfScheduler>
-    </StackLayout>
+    </Grid>
 </ContentPage>
