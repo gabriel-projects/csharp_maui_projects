@@ -27,7 +27,9 @@ namespace Api.GRRInnovations.AgendaPro
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
-            
+
+            services.AddRouting(options => options.LowercaseUrls = true);
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -39,7 +41,6 @@ namespace Api.GRRInnovations.AgendaPro
             }
 
             app.UseHttpsRedirection();
-
 
             app.UseRouting();
             app.UseAuthorization();

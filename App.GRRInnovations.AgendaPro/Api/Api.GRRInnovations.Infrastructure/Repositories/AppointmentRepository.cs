@@ -2,6 +2,9 @@
 using Api.GRRInnovations.Infrastructure.Context;
 using Api.GRRInnovations.Interfaces.Models;
 using Api.GRRInnovations.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Api.GRRInnovations.Infrastructure.Repositories
@@ -13,6 +16,12 @@ namespace Api.GRRInnovations.Infrastructure.Repositories
         public AppointmentRepository(ApiDbContext apiDbContext)
         {
             ApiDbContext = apiDbContext;
+        }
+
+        public async Task<List<IAppointment>> Appointmens()
+        {
+            var result = await ApiDbContext.Appointments.ToListAsync<IAppointment>();
+            return result;
         }
 
         public async Task<IAppointment> Insert(IAppointment appointment)
