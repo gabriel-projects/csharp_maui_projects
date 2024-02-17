@@ -3,7 +3,7 @@ using System;
 
 namespace Api.GRRInnovations.Interfaces.Models
 {
-    public interface IAppointment : IBaseModel
+    public interface ISchedule : IBaseModel
     {
         /// <summary>
         /// Dia/hora do inicio do evento

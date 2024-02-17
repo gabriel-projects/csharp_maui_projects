@@ -4,11 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace Api.GRRInnovations.Domain.Wrappers.In
 {
-    public class WrapperInAppointment<TAppointment> : WrapperBase<TAppointment, WrapperInAppointment<TAppointment>> where TAppointment : IAppointment
+    public class WrapperInSchedule<TSchedule> : WrapperBase<TSchedule, WrapperInSchedule<TSchedule>> where TSchedule : ISchedule
     {
-        public WrapperInAppointment() : base() { }
+        public WrapperInSchedule() : base() { }
 
-        public WrapperInAppointment(TAppointment data) : base(data) { }
+        public WrapperInSchedule(TSchedule data) : base(data) { }
 
         [JsonPropertyName("start_time")]
         public DateTime StartTime

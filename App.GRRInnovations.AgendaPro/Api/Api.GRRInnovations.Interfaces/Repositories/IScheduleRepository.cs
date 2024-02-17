@@ -4,10 +4,10 @@ using System.Threading.Tasks;
 
 namespace Api.GRRInnovations.Interfaces.Repositories
 {
-    public interface IAppointmentRepository
+    public interface IScheduleRepository
     {
-        Task<IAppointment> Insert(IAppointment appointment);
+        Task<ISchedule> Insert(ISchedule schedule);
 
-        Task<List<IAppointment>> Appointmens();
+        Task<List<ISchedule>> Schedules();
     }
 }

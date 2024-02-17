@@ -3,3 +3,15 @@ Agendamentos/Reservar
 Agendamento/Reserva disponiveis
 
 Disponibilizar reserva
+
+
+////////////////////////////////////////////////
+//management owner
+Criar agendamentos 
+Lista agendamentos disponiveis
+Cancelar agendamentos
+
+//user
+Agendar naquela reserva
+Cancelar agendamentos usuario
+Lista agendamentos disponiveis
