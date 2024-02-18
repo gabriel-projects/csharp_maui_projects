@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Api.GRRInnovations.Domain.Wrappers.Out
 {
-    public class WrapperOutSchedule : WrapperBase<ISchedule>
+    public class WrapperOutAppointment : WrapperBase<IAppointment>
     {
-        public WrapperOutSchedule() : base(null) { }
+        public WrapperOutAppointment() : base(null) { }
 
-        public WrapperOutSchedule(ISchedule data) : base(data) { }
+        public WrapperOutAppointment(IAppointment data) : base(data) { }
 
         [JsonPropertyName("uid")]
         public Guid Uid
@@ -70,21 +70,21 @@ namespace Api.GRRInnovations.Domain.Wrappers.Out
             set => Data.UpdatedAt = value;
         }
 
-        public static async Task<WrapperOutSchedule> From(ISchedule schedule)
+        public static async Task<WrapperOutAppointment> From(IAppointment appointment)
         {
-            var wrapper = new WrapperOutSchedule();
-            await wrapper.Populate(schedule).ConfigureAwait(false);
+            var wrapper = new WrapperOutAppointment();
+            await wrapper.Populate(appointment).ConfigureAwait(false);
 
             return wrapper;
         }
 
-        public static async Task<List<WrapperOutSchedule>> From(List<ISchedule> schedules)
+        public static async Task<List<WrapperOutAppointment>> From(List<IAppointment> appointments)
         {
-            var result = new List<WrapperOutSchedule>();
+            var result = new List<WrapperOutAppointment>();
 
-            foreach (var term in schedules)
+            foreach (var term in appointments)
             {
-                var wrapper = new WrapperOutSchedule(null);
+                var wrapper = new WrapperOutAppointment(null);
                 await wrapper.Populate(term).ConfigureAwait(false);
 
                 result.Add(wrapper);

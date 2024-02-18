@@ -3,7 +3,7 @@ using System;
 
 namespace Api.GRRInnovations.Domain.Models
 {
-    public class Schedule : BaseModel, ISchedule
+    public class Appointment : BaseModel, IAppointment
     {
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }

@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Api.GRRInnovations.Infrastructure.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    partial class ApiDBContextModelSnapshot : ModelSnapshot
+    partial class ApiDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -22,7 +22,7 @@ namespace Api.GRRInnovations.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Api.GRRInnovations.Domain.Models.Appointments", b =>
+            modelBuilder.Entity("Api.GRRInnovations.Domain.Models.Appointment", b =>
                 {
                     b.Property<Guid>("Uid")
                         .ValueGeneratedOnAdd()

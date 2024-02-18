@@ -13,13 +13,13 @@ namespace Api.GRRInnovations.Infrastructure.Context
         public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options)
         { }
 
-        public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            DefaultModelSetup<Schedule>(modelBuilder);
+            DefaultModelSetup<Appointment>(modelBuilder);
         }
 
         public override int SaveChanges()

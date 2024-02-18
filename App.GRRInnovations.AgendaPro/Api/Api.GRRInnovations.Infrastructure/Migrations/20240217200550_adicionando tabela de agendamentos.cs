@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Api.GRRInnovations.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class adicionandotabeladeeventos : Migration
+    public partial class adicionandotabeladeagendamentos : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

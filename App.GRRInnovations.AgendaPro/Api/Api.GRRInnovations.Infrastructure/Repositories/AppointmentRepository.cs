@@ -3,30 +3,29 @@ using Api.GRRInnovations.Infrastructure.Context;
 using Api.GRRInnovations.Interfaces.Models;
 using Api.GRRInnovations.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Api.GRRInnovations.Infrastructure.Repositories
 {
-    public class ScheduleRepository : IScheduleRepository
+    public class AppointmentRepository : IAppointmentRepository
     {
         public ApiDbContext ApiDbContext;
 
-        public ScheduleRepository(ApiDbContext apiDbContext)
+        public AppointmentRepository(ApiDbContext apiDbContext)
         {
             ApiDbContext = apiDbContext;
         }
 
-        public async Task<List<ISchedule>> Schedules()
+        public async Task<List<IAppointment>> Appointments()
         {
-            var result = await ApiDbContext.Schedules.ToListAsync<ISchedule>();
+            var result = await ApiDbContext.Appointments.ToListAsync<IAppointment>();
             return result;
         }
 
-        public async Task<ISchedule> Insert(ISchedule schedule)
+        public async Task<IAppointment> Insert(IAppointment appointment)
         {
-            if (schedule is not Schedule model) return null;
+            if (appointment is not Appointment model) return null;
 
             ApiDbContext.Add(model);
             await ApiDbContext.SaveChangesAsync().ConfigureAwait(false);
