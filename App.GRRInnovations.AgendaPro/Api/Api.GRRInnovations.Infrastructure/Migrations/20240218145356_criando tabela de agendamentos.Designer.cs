@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Api.GRRInnovations.Infrastructure.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20240217200550_adicionando tabela de agendamentos")]
-    partial class adicionandotabeladeagendamentos
+    [Migration("20240218145356_criando tabela de agendamentos")]
+    partial class criandotabeladeagendamentos
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace Api.GRRInnovations.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Api.GRRInnovations.Domain.Models.Appointment", b =>
+            modelBuilder.Entity("Api.GRRInnovations.Domain.Models.Schedule", b =>
                 {
                     b.Property<Guid>("Uid")
                         .ValueGeneratedOnAdd()
@@ -57,7 +57,7 @@ namespace Api.GRRInnovations.Infrastructure.Migrations
 
                     b.HasKey("Uid");
 
-                    b.ToTable("Appointments");
+                    b.ToTable("Schedules");
                 });
 #pragma warning restore 612, 618
         }

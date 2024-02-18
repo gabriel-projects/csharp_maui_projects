@@ -22,7 +22,7 @@ namespace Api.GRRInnovations.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Api.GRRInnovations.Domain.Models.Appointment", b =>
+            modelBuilder.Entity("Api.GRRInnovations.Domain.Models.Schedule", b =>
                 {
                     b.Property<Guid>("Uid")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace Api.GRRInnovations.Infrastructure.Migrations
 
                     b.HasKey("Uid");
 
-                    b.ToTable("Appointments");
+                    b.ToTable("Schedules");
                 });
 #pragma warning restore 612, 618
         }

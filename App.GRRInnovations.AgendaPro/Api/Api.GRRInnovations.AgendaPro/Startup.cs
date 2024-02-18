@@ -22,7 +22,7 @@ namespace Api.GRRInnovations.AgendaPro
 
             services.AddControllers();
 
-            services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+            services.AddScoped<IScheduleRepository, ScheduleRepository>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
