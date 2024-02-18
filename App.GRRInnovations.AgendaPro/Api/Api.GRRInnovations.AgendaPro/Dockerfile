@@ -10,10 +10,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["Api.GRRInnovations.AgendaPro.csproj", "."]
+COPY ["App.GRRInnovations.AgendaPro/Api/Api.GRRInnovations.AgendaPro/Api.GRRInnovations.AgendaPro.csproj", "App.GRRInnovations.AgendaPro/Api/"]
 RUN dotnet restore "Api.GRRInnovations.AgendaPro.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/App.GRRInnovations.AgendaPro/Api"
 RUN dotnet build "Api.GRRInnovations.AgendaPro.csproj" -c Release -o /app/build
 
 FROM build AS publish
