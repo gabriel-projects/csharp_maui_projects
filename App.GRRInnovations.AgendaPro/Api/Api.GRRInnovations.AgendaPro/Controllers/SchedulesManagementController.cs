@@ -12,24 +12,23 @@ namespace Api.GRRInnovations.AgendaPro.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ScheduleManagementController : ControllerBase
+    public class SchedulesManagementController : ControllerBase
     {
         private readonly IScheduleRepository ScheduleRepository;
 
-        public ScheduleManagementController(IScheduleRepository scheduleRepository)
+        public SchedulesManagementController(IScheduleRepository scheduleRepository)
         {
             ScheduleRepository = scheduleRepository;
         }
 
         [HttpPost("schedule/management")]
-        public async Task<ActionResult<WrapperOutSchedule>> CreateSchedule([FromBody] WrapperInSchedule<ISchedule> wrapperInSchedule)
+        public async Task<ActionResult<WrapperOutSchedule>> CreateSchedule([FromBody] WrapperInSchedule<Schedule> wrapperInSchedule)
         {
             //todo: autorização
 
+            var model = await wrapperInSchedule.Result();
 
-            var schedule = await wrapperInSchedule.Result();
-
-            schedule = await ScheduleRepository.Insert(schedule);
+            var schedule = await ScheduleRepository.Insert(model);
 
             //todo: obter melhor mensagem para tratar o erro
             if (schedule == null) return new NotFoundObjectResult(new WrapperError { Message = "Falha ao criar apontamento, tente novamente." });
