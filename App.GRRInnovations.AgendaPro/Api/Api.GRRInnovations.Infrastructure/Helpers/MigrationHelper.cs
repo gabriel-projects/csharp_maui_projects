@@ -10,6 +10,8 @@ namespace Api.GRRInnovations.Infrastructure.Helpers
     {
         public static async Task ManageDataAsync(IServiceProvider svcProvider)
         {
+            Console.WriteLine("Aplicando migração CW");
+
             var dbContextSvc = svcProvider.GetRequiredService<ApiDbContext>();
 
             await dbContextSvc.Database.MigrateAsync();

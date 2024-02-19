@@ -18,9 +18,16 @@ namespace Api.GRRInnovations.AgendaPro
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var sqlConnection = Configuration.GetConnectionString("SqlConnectionString");
+            var connectionString = Configuration.GetConnectionString("SqlConnectionString");
+            var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
-            services.AddDbContext<ApiDbContext>(options => options.UseNpgsql(sqlConnection));
+            Console.WriteLine($"sqlConnection Startup: {connectionString}");
+            Console.WriteLine($"databaseUrl Startup: {databaseUrl}");
+
+            var connection = string.IsNullOrEmpty(databaseUrl) ? connectionString : ConnectionHelper.BuildConnectionString(databaseUrl);
+
+
+            services.AddDbContext<ApiDbContext>(options => options.UseNpgsql(connection));
 
             services.AddControllers();
 

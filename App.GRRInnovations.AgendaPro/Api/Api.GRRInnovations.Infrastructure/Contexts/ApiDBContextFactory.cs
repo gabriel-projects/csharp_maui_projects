@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Api.GRRInnovations.Infrastructure.Helpers;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -17,8 +18,12 @@ namespace Api.GRRInnovations.Infrastructure.Context
                .AddEnvironmentVariables()
                .Build();
 
-            var connection = config.GetConnectionString("SqlConnectionString");
-            Debug.WriteLine(connection);
+            var connectionString = config.GetConnectionString("SqlConnectionString");
+            var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+
+            var connection = string.IsNullOrEmpty(databaseUrl) ? connectionString : ConnectionHelper.BuildConnectionString(databaseUrl);
+
+            Debug.WriteLine(connectionString);
 
             var optionsBuilder = new DbContextOptionsBuilder<ApiDbContext>();
             optionsBuilder.UseNpgsql(connection);

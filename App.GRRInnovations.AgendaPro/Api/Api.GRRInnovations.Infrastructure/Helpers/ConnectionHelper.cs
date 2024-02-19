@@ -14,10 +14,13 @@ namespace Api.GRRInnovations.Infrastructure.Helpers
         {
             var connectionString = configuration.GetConnectionString("SqlConnectionString");
             var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+            Console.WriteLine($"databaseurl ConnectionHelper: {databaseUrl}");
+            Console.WriteLine($"connectionString ConnectionHelper: {connectionString}");
+
             return string.IsNullOrEmpty(databaseUrl) ? connectionString : BuildConnectionString(databaseUrl);
         }
 
-        private static string BuildConnectionString(string databaseUrl)
+        public static string BuildConnectionString(string databaseUrl)
         {
             var databaseUri = new Uri(databaseUrl);
             var userInfo = databaseUri.UserInfo.Split(':');
