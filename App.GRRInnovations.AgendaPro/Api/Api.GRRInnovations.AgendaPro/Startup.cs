@@ -42,6 +42,8 @@ namespace Api.GRRInnovations.AgendaPro
                 app.UseSwaggerUI();
             }
 
+            //todo: mover para metodo async
+            //cron
             var scope = app.ApplicationServices.CreateScope();
             MigrationHelper.ManageDataAsync(scope.ServiceProvider);
 
