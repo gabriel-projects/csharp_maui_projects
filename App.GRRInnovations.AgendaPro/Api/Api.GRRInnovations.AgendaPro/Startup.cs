@@ -1,7 +1,9 @@
 ﻿using Api.GRRInnovations.Infrastructure.Context;
+using Api.GRRInnovations.Infrastructure.Helpers;
 using Api.GRRInnovations.Infrastructure.Repositories;
 using Api.GRRInnovations.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace Api.GRRInnovations.AgendaPro
 {
@@ -39,6 +41,9 @@ namespace Api.GRRInnovations.AgendaPro
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            var scope = app.ApplicationServices.CreateScope();
+            MigrationHelper.ManageDataAsync(scope.ServiceProvider);
 
             app.UseHttpsRedirection();
 

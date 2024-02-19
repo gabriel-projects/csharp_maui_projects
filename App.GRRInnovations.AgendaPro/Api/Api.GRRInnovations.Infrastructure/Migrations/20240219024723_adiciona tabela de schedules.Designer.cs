@@ -12,15 +12,14 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Api.GRRInnovations.Infrastructure.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20240218145356_criando tabela de agendamentos")]
-    partial class criandotabeladeagendamentos
+    [Migration("20240219024723_adiciona tabela de schedules")]
+    partial class adicionatabeladeschedules
     {
-        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0")
+                .HasAnnotation("ProductVersion", "6.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);

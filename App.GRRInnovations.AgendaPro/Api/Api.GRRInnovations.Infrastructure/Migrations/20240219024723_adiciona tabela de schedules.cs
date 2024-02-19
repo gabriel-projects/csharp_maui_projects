@@ -5,10 +5,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Api.GRRInnovations.Infrastructure.Migrations
 {
-    /// <inheritdoc />
-    public partial class criandotabeladeagendamentos : Migration
+    public partial class adicionatabeladeschedules : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -31,7 +29,6 @@ namespace Api.GRRInnovations.Infrastructure.Migrations
                 });
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
