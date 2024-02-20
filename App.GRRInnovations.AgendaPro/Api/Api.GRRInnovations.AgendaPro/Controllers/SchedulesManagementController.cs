@@ -33,7 +33,7 @@ namespace Api.GRRInnovations.AgendaPro.Controllers
             //todo: obter melhor mensagem para tratar o erro
             if (schedule == null) return new NotFoundObjectResult(new WrapperError { Message = "Falha ao criar apontamento, tente novamente." });
 
-            var wp = await WrapperOutSchedule.From(new Schedule()).ConfigureAwait(false);
+            var wp = await WrapperOutSchedule.From(schedule).ConfigureAwait(false);
             return Ok(wp);
         }
     }
