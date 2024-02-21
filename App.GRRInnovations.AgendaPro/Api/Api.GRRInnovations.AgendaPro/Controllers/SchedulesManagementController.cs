@@ -21,6 +21,11 @@ namespace Api.GRRInnovations.AgendaPro.Controllers
             ScheduleRepository = scheduleRepository;
         }
 
+        /// <summary>
+        /// Criar disponilidade de agendamento
+        /// </summary>
+        /// <param name="wrapperInSchedule"></param>
+        /// <returns></returns>
         [HttpPost("schedule/management")]
         public async Task<ActionResult<WrapperOutSchedule>> CreateSchedule([FromBody] WrapperInSchedule<Schedule> wrapperInSchedule)
         {

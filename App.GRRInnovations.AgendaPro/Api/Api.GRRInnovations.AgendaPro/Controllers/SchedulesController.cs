@@ -32,13 +32,17 @@ namespace Api.GRRInnovations.AgendaPro.Controllers
         public async Task<ActionResult<WrapperOutSchedule>> ScheduleAppointmentMark(Guid scheduleUid)
         {
             //todo: autorização
+            var schedule = await ScheduleRepository.Get(scheduleUid);
+            if (schedule == null) return new BadRequestObjectResult(new WrapperError() { Message = "Agendamento não encontrado" });  
 
-            var wp = await WrapperOutSchedule.From(new Schedule()).ConfigureAwait(false);
+            //regras
+
+            var wp = await WrapperOutSchedule.From(schedule).ConfigureAwait(false);
             return Ok(wp);
         }
 
         /// <summary>
-        ///     
+        /// Agendamentos disponiveis
         /// </summary>
         /// <returns></returns>
         [HttpGet("schedules/availables")]

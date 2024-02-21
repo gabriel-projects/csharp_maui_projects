@@ -4,7 +4,9 @@ using Api.GRRInnovations.Interfaces.Models;
 using Api.GRRInnovations.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Api.GRRInnovations.Infrastructure.Repositories
@@ -32,6 +34,11 @@ namespace Api.GRRInnovations.Infrastructure.Repositories
             await ApiDbContext.SaveChangesAsync().ConfigureAwait(false);
 
             return model;
+        }
+
+        public async Task<ISchedule> Get(Guid uid)
+        {
+            return await ApiDbContext.Schedules.Where(x => x.Uid == uid).FirstOrDefaultAsync();
         }
     }
 }
