@@ -16,4 +16,11 @@ namespace Api.GRRInnovations.Interfaces.Models
 
         DateTime UpdatedAt { get; set; }
     }
+
+    public interface IBaseModel<TParent> : IBaseModel where TParent : IBaseModel
+    {
+        Guid ParentUid { get; set; }
+
+        TParent Parent { get; set; }
+    }
 }

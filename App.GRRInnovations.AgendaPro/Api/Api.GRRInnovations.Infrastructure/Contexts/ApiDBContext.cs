@@ -15,12 +15,18 @@ namespace Api.GRRInnovations.Infrastructure.Context
         { }
 
         public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<ScheduledAppointment> ScheduledAppointments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             DefaultModelSetup<Schedule>(modelBuilder);
+            modelBuilder.Entity<Schedule>().Ignore(m => m.Appointments);
+
+            DefaultModelSetup<ScheduledAppointment>(modelBuilder);
+            modelBuilder.Entity<ScheduledAppointment>().Ignore(m => m.Parent);
+            modelBuilder.Entity<ScheduledAppointment>().HasOne(m => m.DbParent).WithMany(m => m.DbAppointments).HasForeignKey(x => x.ParentUid).OnDelete(DeleteBehavior.Cascade);
         }
 
         public override int SaveChanges()

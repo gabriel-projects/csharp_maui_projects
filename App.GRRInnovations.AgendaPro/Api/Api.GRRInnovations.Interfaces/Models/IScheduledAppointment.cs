@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Api.GRRInnovations.Interfaces.Models
 {
-    internal class IScheduledAppointment
+    public interface IScheduledAppointment : IBaseModel<ISchedule>
     {
     }
 }

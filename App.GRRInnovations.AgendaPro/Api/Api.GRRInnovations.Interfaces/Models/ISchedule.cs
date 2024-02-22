@@ -1,5 +1,5 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Api.GRRInnovations.Interfaces.Models
 {
@@ -29,5 +29,10 @@ namespace Api.GRRInnovations.Interfaces.Models
         /// Assunto do evento
         /// </summary>
         string Subject { get; set; }
+
+        /// <summary>
+        /// Agendamentos marcados
+        /// </summary>
+        List<IScheduledAppointment> Appointments { get; set; }
     }
 }
