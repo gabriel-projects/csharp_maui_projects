@@ -49,6 +49,21 @@ namespace Api.GRRInnovations.AgendaPro.Controllers
         public async Task<ActionResult<List<WrapperOutSchedule>>> SchedulesAvailable()
         {
             //todo: obter os compromissos pelo jwt autorização
+            
+            var schedules = await ScheduleRepository.Schedules();
+
+            var wp = await WrapperOutSchedule.From(schedules).ConfigureAwait(false);
+            return Ok(wp);
+        }
+
+        /// <summary>
+        /// Agendamentos marcados
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("scheduled/appointments")]
+        public async Task<ActionResult<List<WrapperOutSchedule>>> ScheduledAppointments()
+        {
+            //todo: obter os compromissos pelo jwt autorização
 
             var schedules = await ScheduleRepository.Schedules();
 
