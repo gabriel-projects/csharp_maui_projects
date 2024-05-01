@@ -20,6 +20,7 @@ namespace Api.GRRInnovations.Domain.Models
             get => DbAppointments?.Cast<IScheduledAppointment>()?.ToList();
             set => DbAppointments = value?.Cast<ScheduledAppointment>()?.ToList();
         }
+        public string Name { get; set; }
 
         public Schedule()
         {

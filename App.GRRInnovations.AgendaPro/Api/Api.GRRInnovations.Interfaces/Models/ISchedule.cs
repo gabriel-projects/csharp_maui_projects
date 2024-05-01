@@ -30,6 +30,8 @@ namespace Api.GRRInnovations.Interfaces.Models
         /// </summary>
         string Subject { get; set; }
 
+        string Name { get; set; }
+
         /// <summary>
         /// Agendamentos marcados
         /// </summary>
